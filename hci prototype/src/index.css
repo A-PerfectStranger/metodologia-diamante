@@ -1,0 +1,261 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body, #root {
+    height: 100%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    overflow: hidden;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #f5f3ff;
+    color: #1f2937;
+  }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+  }
+
+  input[type='range'] {
+    accent-color: #7c3aed;
+  }
+}
+
+@layer utilities {
+
+  /* ==========================
+      Scrollbar
+  =========================== */
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ==========================
+      Card Gradients
+  =========================== */
+
+  /* Principal (ideal para la tarjeta azul) */
+  .card-gradient {
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(255,255,255,.20),
+        transparent 42%
+      ),
+      linear-gradient(
+        135deg,
+        #6d28d9 0%,
+        #7c3aed 45%,
+        #8b5cf6 75%,
+        #a78bfa 100%
+      );
+  }
+
+  /* Morado intenso */
+  .card-gradient-dark {
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(255,255,255,.14),
+        transparent 45%
+      ),
+      linear-gradient(
+        135deg,
+        #5b21b6 0%,
+        #6d28d9 100%
+      );
+  }
+
+  /* Variante clara */
+  .card-gradient-light {
+    background:
+      linear-gradient(
+        135deg,
+        #ede9fe,
+        #ddd6fe
+      );
+  }
+
+  /* ==========================
+      Glass
+  =========================== */
+
+  .glass {
+    background: rgba(255,255,255,.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,.18);
+  }
+
+  .glass-dark {
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,.12);
+  }
+
+  /* ==========================
+      Card Effects
+  =========================== */
+
+  .card-shadow {
+    box-shadow:
+      0 12px 32px rgba(124,58,237,.18),
+      0 6px 12px rgba(0,0,0,.08);
+  }
+
+  .card-premium {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .card-premium::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+      linear-gradient(
+        120deg,
+        rgba(255,255,255,.22),
+        rgba(255,255,255,0) 35%
+      );
+  }
+
+  .card-premium::after {
+    content: "";
+    position: absolute;
+    top: -60%;
+    right: -25%;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.08);
+    filter: blur(25px);
+    pointer-events: none;
+  }
+
+  /* ==========================
+      Hover
+  =========================== */
+
+  .card-hover {
+    transition:
+      transform .25s ease,
+      box-shadow .25s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 18px 40px rgba(124,58,237,.22);
+  }
+
+  /* ==========================
+      Buttons
+  =========================== */
+
+  .btn-primary {
+    background: linear-gradient(
+      135deg,
+      #7c3aed,
+      #8b5cf6
+    );
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(
+      135deg,
+      #6d28d9,
+      #7c3aed
+    );
+  }
+
+  /* ==========================
+      Lock Screen
+  =========================== */
+
+  .lock-screen-bg {
+    background:
+      linear-gradient(
+        180deg,
+        #1c1338 0%,
+        #2f1b69 100%
+      );
+  }
+
+}
+
+/* ==================================
+      Tracker animation
+================================== */
+
+.tracker-line-animated {
+  animation: fillLine .7s ease forwards;
+}
+
+@keyframes fillLine {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* ==================================
+      Progress
+================================== */
+
+.progress-inner {
+  transition:
+    width .8s cubic-bezier(.4,0,.2,1);
+}
+
+/* ==================================
+      Toast
+================================== */
+
+.toast-enter {
+  animation: toastIn .35s ease-out both;
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
