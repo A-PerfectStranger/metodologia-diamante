@@ -69,10 +69,10 @@
       ),
       linear-gradient(
         135deg,
-        #6d28d9 0%,
-        #7c3aed 45%,
-        #8b5cf6 75%,
-        #a78bfa 100%
+        #E8C547 0%,   /* amarillo claro */
+        #D9B63A 45%,  /* amarillo patito */
+        #ca8a04 75%,  /* ámbar medio */
+        #f59e0b 100%  /* ámbar intenso */
       );
   }
 

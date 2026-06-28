@@ -5,9 +5,9 @@ export default {
     extend: {
       colors: {
         pichincha: {
-          DEFAULT: '#7c3aed',
-          light: '#a78bfa',
-          pale: '#f5f3ff',
+          DEFAULT: '#ca8a04',
+          light: '#fde047',
+          pale: '#fefce8',
         },
         brand: {
           success: '#10b981',

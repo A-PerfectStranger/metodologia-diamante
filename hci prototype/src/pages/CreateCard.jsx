@@ -337,7 +337,7 @@ export default function CreateCard() {
         <p className="text-sm font-bold">Paso {step + 1}: {STEP_LABELS[step]}</p>
         {step > 0 && data.purposeLabel && (
           <p className="text-xs text-gray-500 mt-0.5 inline-flex items-center justify-center gap-1.5">
-            {PurposeIcon && <span className="text-violet-600"><PurposeIcon className="w-3.5 h-3.5" /></span>}
+            {PurposeIcon && <span className="text-amber-600"><PurposeIcon className="w-3.5 h-3.5" /></span>}
             <span>Propósito: {data.customName || data.purposeLabel}</span>
           </p>
         )}

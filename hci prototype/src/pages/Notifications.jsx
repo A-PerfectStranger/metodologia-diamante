@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useApp, SCREENS } from '../context/AppContext'
 import {
-  StatusBar, AppHeader, PinIcon, CreditCardIcon, WalletIcon,
+  StatusBar, PinIcon, CreditCardIcon, WalletIcon,
   LockIcon, ChartIcon, BellIcon,
 } from '../components/shared'
 
@@ -20,7 +20,6 @@ export default function Notifications() {
   return (
     <div className="flex flex-col flex-1 min-h-0">
       <StatusBar dark />
-      <AppHeader />
 
       {/* Lock screen simulation area */}
       <div className="lock-screen-bg flex-1 overflow-y-auto scrollbar-hide px-4 py-6">
